@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">MetaCubeX/mihomo</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>vadim.stepanov.web@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+  <longdescription>
+    Mihomo Kernel packaged with OpenRC user services in mind.
+
+    It doesn't differ much from <pkg>net-proxy/mihomo</pkg> in gentoo-zh overlay,
+    the only difference is that is provides user init-script and uses fcaps to set
+    necessary capabilities, since OpenRC user services cannot declare them as system-wide
+    services do.
+  </longdescription>
+  <use>
+    <flag name="gvisor">
+      Compile with gvisor that implements the network protocol 
+      stack in user space, offering higher security and isolation
+    </flag>
+  </use>
+</pkgmetadata>
+
