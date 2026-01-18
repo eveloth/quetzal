@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+supervisor="supervise-daemon"
+command="/usr/bin/mihomo"
+command_args="-d ${MIHOMO_CONF_DIR:-/etc/mihomo}"
+
+output_log="${XDG_STATE_HOME:-/var/log}/${RC_SVCNAME}/${RC_SVCNAME}.log"
+error_log="${output_log}"
+
+start_pre()
+{
+  checkpath -d -o ${USER} -m 0755 ${XDG_STATE_HOME:-/var/log}/${RC_SVCNAME}
+}
+

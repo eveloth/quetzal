@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+# Copyright 2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+pidfile="/run/${RC_SVCNAME}.pid"
+command="/usr/bin/mihomo"
+command_args="-d ${MIHOMO_CONF_DIR:-/etc/mihomo}"
+command_background="yes"
+
+rc_ulimit="${MIHOMO_ULIMIT:--u 500 -n 1048576}"
+output_log="/var/log/${RC_SVCNAME}.log"
+error_log="/var/log/${RC_SVCNAME}.log"
+
+depend() {
+    need net
+    after local
+}
