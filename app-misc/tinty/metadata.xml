@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">tinted-theming/tinty</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>vadim.stepanov.web@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+    <longdescription>
+      Change the theme of your terminal, text editor and anything else with one command!
+    </longdescription>
+</pkgmetadata>
+
