@@ -18,7 +18,7 @@ IUSE="hidapi notify"
 
 DEPEND="hidapi? ( virtual/libudev:= )"
 RDEPEND="${DEPEND}"
-BDEPEND=">=dev-lang/go-1.26"
+BDEPEND=">=dev-lang/go-1.26.0"
 
 src_unpack() {
 	git-r3_src_unpack
