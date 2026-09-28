@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">eveloth/viswitch</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>vadim.stepanov.web@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+  <longdescription>
+    Loads layouts saved from the Vial GUI (.vil files) into a Vial keyboard
+    without opening the GUI: load, toggle between profiles or check which
+    profile is active. Meant to be bound to a hotkey.
+  </longdescription>
+  <use>
+    <flag name="hidapi">
+      Talk to the keyboard through <pkg>dev-libs/hidapi</pkg>'s code
+      (bundled, needs cgo and libudev) instead of /dev/hidraw directly
+    </flag>
+    <flag name="notify">
+      Enable desktop notifications after switching (--notify), sent over D-Bus
+    </flag>
+  </use>
+</pkgmetadata>
