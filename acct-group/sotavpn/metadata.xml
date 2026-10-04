@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>vadim.stepanov.web@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+  <longdescription>
+    Members may run the <pkg>net-vpn/sotavpn-bin</pkg> daemon as an OpenRC
+    user service: the group owns /var/lib/sota-connect, the state
+    directory the daemon has hardcoded.
+  </longdescription>
+</pkgmetadata>
