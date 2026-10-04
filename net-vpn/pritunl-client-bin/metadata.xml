@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">pritunl/pritunl-client</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>vadim.stepanov.web@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+  <longdescription>
+    Pritunl client without the Electron GUI, repackaged from upstream's
+    release builds: the pritunl-client-service daemon, which manages
+    OpenVPN and WireGuard connections, and the pritunl-client command line
+    and terminal interface that talks to it.
+  </longdescription>
+</pkgmetadata>

@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Pritunl Client Daemon"
+
+command="/usr/bin/pritunl-client-service"
+supervisor="supervise-daemon"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+# Restart=always + RestartSec=5
+respawn_delay=5
+respawn_max=0
+
+# stdout/stderr (systemd would send these to the journal)
+output_log="/var/log/pritunl-client.log"
+error_log="/var/log/pritunl-client.log"
+
+depend() {
+	need net
+	use dns logger
+}
