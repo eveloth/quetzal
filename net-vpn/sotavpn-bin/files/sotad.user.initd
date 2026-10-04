@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Sota Connect daemon"
+
+supervisor="supervise-daemon"
+command="/usr/libexec/sota-daemon/sotad"
+# sotad looks for sing-box next to itself, as upstream's systemd unit does
+directory="/usr/libexec/sota-daemon"
+
+output_log="${XDG_STATE_HOME:-/var/log}/${RC_SVCNAME}/${RC_SVCNAME}.log"
+error_log="${output_log}"
+
+rc_ulimit="-n 65536"
+
+start_pre()
+{
+  checkpath -d -o ${USER} -m 0755 ${XDG_STATE_HOME:-/var/log}/${RC_SVCNAME}
+}

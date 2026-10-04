@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Sota Connect daemon"
+
+supervisor="supervise-daemon"
+command="/usr/libexec/sota-daemon/sotad"
+# sotad looks for sing-box next to itself, as upstream's systemd unit does
+directory="/usr/libexec/sota-daemon"
+
+output_log="/var/log/${RC_SVCNAME}.log"
+error_log="/var/log/${RC_SVCNAME}.log"
+
+rc_ulimit="-n 65536"
+
+depend() {
+	need net
+	after firewall
+}
+
+start_pre() {
+	checkpath -d -m 2770 -o root:sotavpn /var/lib/sota-connect
+}
